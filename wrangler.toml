@@ -1,0 +1,13 @@
+name = "event-notification-writer"
+main = "src/index.ts"
+compatibility_date = "2024-05-13"
+compatibility_flags = ["nodejs_compat"]
+
+[[r2_buckets]]
+bucket_name = "log-bucket"
+binding = "LOG_BUCKET"
+
+[[queues.consumers]]
+queue = "event-notification-queue"
+max_batch_size = 100
+max_batch_timeout = 5
